@@ -1,0 +1,241 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.14);
+  z-index: 999;
+  transition: all var(--transition);
+}
+
+html[data-theme="light"] .navbar {
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 100%;
+  padding: 0 24px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.nav-brand span:first-child {
+  font-size: 32px;
+  animation: spin-slow 8s linear infinite;
+}
+
+.nav-brand-text {
+  background: linear-gradient(135deg, var(--primary), #FF8557);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-brand:hover span:first-child {
+  animation-play-state: paused;
+  transform: scale(1.15);
+}
+
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: var(--radius-lg);
+  transition: all var(--transition);
+}
+
+.nav-hamburger:hover {
+  background: var(--primary-glow);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  flex: 1;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  padding: 10px 20px;
+  border-radius: var(--radius-xl);
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all var(--transition);
+  border: 1px solid transparent;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--primary-strong);
+}
+
+.nav-links a.active {
+  color: var(--primary-strong);
+  background: rgba(56, 189, 248, 0.1);
+  border-color: rgba(56, 189, 248, 0.18);
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.nav-theme-toggle {
+  background: #ffffff;
+  border: 1.5px solid rgba(56, 189, 248, 0.16);
+  color: var(--primary-strong);
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-lg);
+  font-size: 18px;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-theme-toggle:hover {
+  border-color: rgba(56, 189, 248, 0.28);
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.nav-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #38bdf8, #0284c7);
+  border: 2px solid rgba(255, 255, 255, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.nav-username {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.nav-logout {
+  background: rgba(56, 189, 248, 0.08);
+  border: 1.5px solid rgba(56, 189, 248, 0.16);
+  color: #0f172a;
+  padding: 8px 16px;
+  border-radius: var(--radius-xl);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.nav-logout:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+  background: rgba(56, 189, 248, 0.14);
+}
+
+.nav-user {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(56, 189, 248, 0.14);
+}
+
+.mobile-user-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--border);
+    padding: 16px;
+    gap: 12px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition);
+    justify-content: flex-start;
+  }
+
+  .nav-links.open {
+    max-height: 400px;
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: left;
+  }
+
+  .mobile-user-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .nav-user {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    height: 60px;
+  }
+
+  .navbar .container {
+    padding: 0 16px;
+  }
+
+  .nav-brand {
+    font-size: 18px;
+    gap: 8px;
+  }
+
+  .nav-brand span:first-child {
+    font-size: 24px;
+  }
+
+  .nav-links {
+    top: 60px;
+  }
+}

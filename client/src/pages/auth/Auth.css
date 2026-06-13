@@ -1,0 +1,329 @@
+.auth-page {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.auth-page.single-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f8fafc;
+  grid-template-columns: none;
+}
+
+.auth-decorative {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px;
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-decorative::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.auth-tagline {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-tagline-subtitle {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.6;
+  max-width: 380px;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-contact-info {
+  margin-top: 40px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  animation: slideInRight 0.5s ease forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.single-column .auth-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  margin: 0;
+}
+
+.auth-logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-logo-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #0ea5e9;
+  color: white;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 auto 20px auto;
+}
+
+.auth-logo h1 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+.auth-logo p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+.auth-form .form-group {
+  margin-bottom: 20px;
+}
+
+.auth-form .form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.auth-form .form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 14px;
+  color: #1e293b;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.auth-form .form-input:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.auth-form .form-input::placeholder {
+  color: #94a3b8;
+}
+
+.auth-submit-btn {
+  display: block;
+  width: 100%;
+  padding: 13px 24px;
+  margin-top: 8px;
+  background-color: #0ea5e9 !important;
+  color: #ffffff !important;
+  font-size: 15px;
+  font-weight: 600;
+  border: none !important;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-sizing: border-box;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.auth-submit-btn:hover:not(:disabled) {
+  background-color: #0284c7 !important;
+}
+
+.auth-submit-btn:active:not(:disabled) {
+  transform: scale(0.98);
+  background-color: #0369a1 !important;
+}
+
+.auth-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ===================================================== */
+
+.auth-links {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.auth-links a {
+  color: #0ea5e9;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-links a:hover {
+  color: #0284c7;
+  text-decoration: underline;
+}
+
+.auth-divider {
+  text-align: center;
+  padding: 20px 0;
+  color: #94a3b8;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+  margin: 0 10px;
+}
+
+.auth-message {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.auth-message.success {
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.auth-message.error {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+@media (max-width: 1024px) {
+  .auth-page {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .auth-decorative {
+    display: none;
+  }
+
+  .auth-card {
+    padding: 32px 24px;
+    max-width: 100%;
+  }
+}
+
+.Toastify__toast-container {
+  padding: 10px;
+}
+
+.Toastify__toast {
+  border-radius: 12px;
+  padding: 16px;
+  font-family: inherit;
+}
+
+.Toastify__close-button {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  background: none !important;
+  border: none !important;
+  width: 20px !important;
+  height: 20px !important;
+  cursor: pointer !important;
+  font-size: 20px !important;
+  line-height: 1 !important;
+  margin-left: 10px;
+}
+
+.Toastify__toast-body>i:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.Toastify__toast-body {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 5px !important;
+}
+
+.Toastify__toast-body>i {
+  margin-left: auto !important;
+  font-size: 14px !important;
+  padding: 4px 8px !important;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.Toastify__close-button::after {
+  content: "X";
+}
