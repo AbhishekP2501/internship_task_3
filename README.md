@@ -1,4 +1,4 @@
-# 🍕 Pizza Delivery Application — OIBSIP Web Development & Designing Task 1
+# 🍕 Pizza Delivery Application — OIBSIP Web Development & Designing Level 3
 
 A full-stack **MERN** (MongoDB, Express, React, Node.js) Pizza Delivery Application featuring a dynamic photo-realistic custom pizza builder, secure authentication, Razorpay payments, and an administrative inventory control system with automated low-stock email alerts.
 
